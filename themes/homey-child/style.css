@@ -1,0 +1,206 @@
+/*
+Theme Name: Homey Child
+Theme URI: http://themeforest.net/user/favethemes/
+Author: Favethemes
+Author URI: https://favethemes.com
+Description: Homey is a powerful booking platform that lets you run a residential or commercial
+rental business online with no hassle
+Version: 1.0.0
+Tags: right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, post-formats, theme-options, translation-ready
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: homey
+Template: homey
+*/
+
+
+/* Your CSS code goes here
+-------------------------------------- */
+/* Body */
+.main-content-area {
+  margin: 0;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+/* Header */
+.header-comp-logo img,
+.mobile-logo img {
+  padding: 10px 0;
+}
+.menu-dropdown,
+.menu-dropdown .sub-menu,
+.sub-menu {
+  margin-top: -20px;
+}
+.country-selector.weglot-dropdown {
+  width: 4%;
+  margin-top: -66px;
+  float: right;
+  background-color: transparent;
+  color: #4f5962;
+}
+.home .country-selector.weglot-dropdown {
+  color: #ffffff;
+}
+.home .sticky-nav-area .country-selector.weglot-dropdown {
+  color: #4f5962;
+}
+/* Hide Croatian flag on home */
+.home .country-selector.weglot-dropdown a#weglot-language-hr {
+  display: none;
+}
+.header-mobile .country-selector.weglot-dropdown {
+  width: 50%;
+  margin-top: 0;
+  float: left;
+}
+.header-mobile .country-selector.weglot-dropdown.closed ul {
+  display: block;
+}
+.country-selector.weglot-dropdown a,
+.country-selector.weglot-dropdown span {
+  font-size: 15px;
+  font-weight: 700;
+}
+.country-selector.weglot-dropdown .wgcurrent {
+  padding-top: 10px;
+  border: 0px;
+}
+.home .country-selector.weglot-dropdown .wgcurrent::after {
+  filter:  brightness(0) invert(1);
+  top: 25px;
+}
+.country-selector.weglot-dropdown .wgcurrent::after,
+.sticky-nav-area .country-selector.weglot-dropdown .wgcurrent::after {
+  filter:  brightness(0);
+  top: 25px;
+}
+
+/* Fonts & Elements */
+.eicon {
+  display: inline-block;
+  font: normal normal normal 14px/1 "Font Awesome 5 Free";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.elementor-star-rating {
+  font-family: "FontAwesome";
+  color: transparent;
+}
+.elementor-star-rating i:not(:last-of-type) {
+  padding-right: 8px;
+}
+.elementor-star-rating .elementor-star-full::before {
+  font-family: "FontAwesome";
+  content: "\f005";
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+}
+.elementor-star-rating .elementor-star-empty::before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 15px;
+  font-weight: 400;
+  content: "\f005";
+  line-height: 1;
+  color: #949ca5;
+}
+#user-nav .fa,
+.user-mobile-nav .fa,
+.detail-property-page .fa,
+.property-item .fa {
+  font-family: "FontAwesome";
+}
+ul,
+ol {
+  padding-left: 5px;
+}
+img.padding-right-5 {
+  padding-right: 5px;
+}
+
+/* Listings */
+.item-grid-view .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+}
+.item-grid-view .row::before{
+  content: none;
+}
+.item-grid-view .row .item-wrap {
+  width: 370px;
+  max-width: 370px;
+}
+
+/* Directory */
+.single-page-article .article-detail.block-body {
+  padding: 40px 0 !important;
+}
+.directorist-listing-details .directorist-listing-details__text p,
+.directorist-details-info-wrap .directorist-single-info .directorist-single-info__label,
+.directorist-details-info-wrap .directorist-single-info .directorist-single-info__value,
+.directorist-listing-single .directorist-listing-single__info .directorist-listing-single__info--excerpt p,
+.directorist-listing-single .directorist-listing-single__info .directorist-listing-single__info--list ul li {
+  color: #636363;
+}
+.directorist-details-info-wrap .directorist-single-info .directorist-single-info__value a,
+.directorist-listing-single .directorist-listing-single__meta .directorist-listing-single__meta--left .directorist-listing-category a,
+.directorist-listing-single .directorist-listing-single__info .directorist-listing-single__info--list ul li a {
+  color: #FF9900;
+}
+.d2g-sidebar .directorist-container,
+.d2g-sidebar .directorist-container-fluid,
+.d2g-sidebar .directorist-container-xxl,
+.d2g-sidebar .directorist-container-xl,
+.d2g-sidebar .directorist-container-lg,
+.d2g-sidebar .directorist-container-md,
+.d2g-sidebar .directorist-container-sm {
+  padding-left: 0px;
+}
+.d2g-sidebar .directorist-listing-single.directorist-listing-list {
+  flex-wrap: wrap;
+}
+.d2g-sidebar .directorist-listing-single.directorist-listing-list .directorist-listing-single__thumb,
+.d2g-sidebar .directorist-listing-single.directorist-listing-list .directorist-listing-single__content {
+  flex: 0 0 100%;
+}
+
+
+/* Search Forms */
+.bootstrap-select .dropdown-toggle .filter-option {
+  position: relative;
+  top: 6px;
+}
+
+/* Contact Forms */
+.form-group br {
+  display: none;
+}
+
+
+/* Footer */
+.footer-top-wrap {
+  border-top: 1px solid #d8dce1;
+}
+.footer-widget.widget-about img {
+  max-width: 260px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 991px) {
+/* large tablet styles */
+
+}
+
+@media screen and (max-width: 767px) {
+/* medium tablet styles */
+
+}
+
+@media screen and (max-width: 480px) {
+/* phone styles */
+
+}
