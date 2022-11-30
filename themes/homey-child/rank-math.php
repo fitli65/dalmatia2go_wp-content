@@ -160,7 +160,8 @@
 		],
 		'directorist_address_callback'
 	);
-	*/
+*/
+
 
  } );
 
@@ -247,19 +248,21 @@
  }
  function listing_review_callback() {
 	$review = get_post_meta( get_the_ID(), 'listing_total_rating', true );
-	    return $review;
+	return $review;
 }
 
- /* Functions to get the Directorist callback data 
- use \Directorist\Directorist_Single_Listing;
- 
+ /* Functions to get the Directorist callback data  */
+ //use \Directorist\Directorist_Single_Listing;
+ //$listing = Directorist_Single_Listing::instance();
+ //$address_data = $listing->get_address( $data );
+ //$address = ( is_string( $address_data ) ) ? $address_data : '';
+ /*
  function directorist_address_callback() {
-	$directorist_listing = Directorist_Single_Listing::instance();
-	$address_data = $directorist_listing->get_address( $data );
-	$directorist_address = ( is_string( $address_data ) ) ? $address_data : '';
-	if ( !empty( $directorist_address ) ){
-	    return $directorist_address;
-	}
+	//if ( !empty( $address ) ){
+	    return apply_filters('atbdp_all_locations_after_location_name');
+	//}
  }
  */
+ 
+
  
