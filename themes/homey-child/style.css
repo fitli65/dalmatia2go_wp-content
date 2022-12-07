@@ -137,6 +137,15 @@ img.padding-right-5 {
 .price-table-price-wrap {
   padding: 15px 0 30px;
 }
+.host-section-buttons {
+  display: none;
+}
+.sort-wrap {
+  border-top: none;
+}
+.sidebar-booking-module-footer .social-icons .btn-bg-google {
+  display: none;
+}
 
 /* Directory */
 .single-page-article .article-detail.block-body {
@@ -229,10 +238,13 @@ img.padding-right-5 {
 */
 
 
-/* Search Forms */
+/* Search */
 .bootstrap-select .dropdown-toggle .filter-option {
   position: relative;
   top: 6px;
+}
+.map-search {
+  display: none;
 }
 
 /* Contact Forms */
@@ -251,16 +263,41 @@ img.padding-right-5 {
 
 /* Media Queries */
 @media screen and (max-width: 991px) {
-/* large tablet styles */
-
+  /* large tablet styles */
+  .search-banner .search-type.search-radius-dropdown {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
-/* medium tablet styles */
-
+  /* medium tablet styles */
+  .mobile-logo {
+    text-align: left;
+  }
+  .mobile-nav-wrap li {
+    border-bottom: 1px solid #949ca5;
+  }
+  .header-mobile .country-selector.weglot-dropdown {
+    margin-top: 2px;
+  }
+  .header-mobile .user-menu .btn-mobile-nav {
+    padding: 0 15px 0 0;
+  }
+  .directorist-single-listing-header .directorist-card__body {
+    padding: 20px 0;
+  }
+  .directorist-single-listing-header .directorist-card__body .directorist-listing-details {
+    padding: 0 25px;
+  }
+  .directorist-details-info-wrap .directorist-single-info .directorist-single-info__label {
+    min-width: 100px;
+  }
+  .footer .container {
+    padding-left: 25px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-/* phone styles */
+  /* phone styles */
 
 }
