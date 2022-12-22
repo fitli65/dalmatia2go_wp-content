@@ -226,6 +226,14 @@ img.padding-right-5 {
   background-color: #13759b !important;
   border-color: #13759b !important;
 }
+.directorist-row > * {
+  margin-top: 2px;
+}
+#directorist.atbd_wrapper .atbd_all_categories .directorist-col-6 .atbd_category_single:not(.atbd_category_no_image),
+#directorist.atbd_wrapper .atbd_all_categories .directorist-col-6 .atbd_category_single:not(.atbd_category_no_image) figcaption {
+  min-height: 180px;
+  margin-bottom: 0px;
+}
 
 /* Weglot */
 .country-selector.weglot-default {

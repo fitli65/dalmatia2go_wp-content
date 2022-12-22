@@ -4,7 +4,7 @@ Tags: patterns, templates, blocks, gutenberg, library, editor, page builder
 Requires at least: 4.0
 Requires PHP: 7.1
 Tested up to: 6.1
-Stable tag: 4.3.20
+Stable tag: 4.3.21
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -103,6 +103,14 @@ Once Installed and Activated you will be invited to Activate your Redux account.
 If you want, you can use the [Gutenberg](https://wordpress.org/plugins/gutenberg/) plugin to get bleeding-edge experiments by the Gutenberg team.
 
 == Changelog ==
+= 4.3.21 =
+* Added: Google Maps extension.
+* Fixed: Widget area UI improperly aligned when `dev_mode` set to `false`.
+* Fixed: `spinner` field not outputting `output` data.
+* Fixed: Metaboxes CSS causing layout issues when `dev_mode` set to `false`.
+* Update: Extendify Library 1.2.1
+* Update: Font Awesome 6.2.1
+* Release date: December 05, 2022
 
 = 4.3.20 =
 * Added: Widget Areas extension (for use with Classic Widgets only).
@@ -111,10 +119,12 @@ If you want, you can use the [Gutenberg](https://wordpress.org/plugins/gutenberg
 * Fixed: JS error when `typography` `font-style` set to `false`.
 * Updated: Removed registration verbiage from Google Fonts update notice.
 * Updated: Extendify Library 1.0.1
+* Release date: November 2, 2022
 
 = 4.3.19 =
 * Fixed: Extendify menu item appearing when it should not.
 * Fixed: Blank page template would cause fatal error.
+* Release date: September 30, 2022
 
 = 4.3.18 =
 * New: Typography `weights` argument to override standard default weights.

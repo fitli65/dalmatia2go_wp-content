@@ -22,6 +22,7 @@ use Extendify\Onboarding\Controllers\WPController;
 use Extendify\Assist\Controllers\AssistDataController;
 use Extendify\Assist\Controllers\GlobalsController;
 use Extendify\Assist\Controllers\TasksController;
+use Extendify\Assist\Controllers\TourController;
 use Extendify\Assist\Controllers\UserSelectionController;
 use Extendify\Assist\Controllers\WPController as AssistWPController;
 
@@ -59,6 +60,7 @@ use Extendify\Assist\Controllers\WPController as AssistWPController;
         ApiRouter::post('/onboarding/options', [WPController::class, 'updateOption']);
         ApiRouter::get('/onboarding/options', [WPController::class, 'getOption']);
         ApiRouter::post('/onboarding/parse-theme-json', [WPController::class, 'parseThemeJson']);
+        ApiRouter::get('/onboarding/active-plugins', [WPController::class, 'getActivePlugins']);
 
         ApiRouter::get('/onboarding/site-types', [DataController::class, 'getSiteTypes']);
         ApiRouter::get('/onboarding/styles', [DataController::class, 'getStyles']);
@@ -76,10 +78,14 @@ use Extendify\Assist\Controllers\WPController as AssistWPController;
         ApiRouter::get('/assist/tasks', [TasksController::class, 'fetchTasks']);
         ApiRouter::get('/assist/task-data', [TasksController::class, 'get']);
         ApiRouter::post('/assist/task-data', [TasksController::class, 'store']);
+        ApiRouter::get('/assist/tour-data', [TourController::class, 'get']);
+        ApiRouter::post('/assist/tour-data', [TourController::class, 'store']);
         ApiRouter::get('/assist/global-data', [GlobalsController::class, 'get']);
         ApiRouter::post('/assist/global-data', [GlobalsController::class, 'store']);
         ApiRouter::get('/assist/user-selection-data', [UserSelectionController::class, 'get']);
         ApiRouter::post('/assist/user-selection-data', [UserSelectionController::class, 'store']);
+        ApiRouter::get('/assist/active-plugins', [AssistWPController::class, 'getActivePlugins']);
+        ApiRouter::get('/assist/tasks/dependency-completed', [TasksController::class, 'dependencyCompleted']);
 
         // TODO: consider merging this route into the library.
         ApiRouter::post('/library/site-type', [LibraryController::class, 'updateSiteType']);

@@ -73,12 +73,17 @@ class Admin
     {
         \add_action(
             'admin_enqueue_scripts',
-            function ($hook) {
+            function () {
                 if (!current_user_can(Config::$requiredCapability)) {
                     return;
                 }
 
-                $this->addScopedScriptsAndStyles($hook);
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                if (!isset($_GET['page']) || $_GET['page'] !== 'extendify-launch') {
+                    return;
+                }
+
+                $this->addScopedScriptsAndStyles();
             }
         );
     }
@@ -153,16 +158,10 @@ class Admin
     /**
      * Adds various JS scripts
      *
-     * @param string $hook - The WP admin page identifier.
-     *
      * @return void
      */
-    public function addScopedScriptsAndStyles($hook)
+    public function addScopedScriptsAndStyles()
     {
-        if ($hook !== 'extendify_page_extendify-launch') {
-            return;
-        }
-
         $partnerData = $this->checkPartnerDataSources();
 
         $bgColor = isset($partnerData['bgColor']) ? $partnerData['bgColor'] : '#2c39bd';
@@ -209,6 +208,8 @@ class Admin
                 // Only send insights if they have opted in explicitly.
                 'insightsEnabled' => defined('EXTENDIFY_INSIGHTS_URL'),
                 'activeTests' => \get_option('extendify_active_tests', []),
+                'wpLanguage' => \get_locale(),
+                'siteCreatedAt' => get_user_option('user_registered', 1),
             ]),
             'before'
         );

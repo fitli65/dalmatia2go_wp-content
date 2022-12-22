@@ -14,6 +14,7 @@
 .extendify-assist *:after,
 .extendify-assist *:before {
     box-sizing: border-box;
+    border: 0 solid #e5e7eb;
 }
 .hide-checkmark::before {
     content: none;
@@ -23,9 +24,9 @@
     display: block;
     padding-bottom: 192px !important;
 }
-.extendify_page_extendify-assist {
+body[class*="_page_extendify-assist"] {
     @apply bg-white;
 }
-.extendify_page_extendify-assist #wpcontent {
+body[class*="_page_extendify-assist"] #wpcontent {
     @apply p-0;
 }
