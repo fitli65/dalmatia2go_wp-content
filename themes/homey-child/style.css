@@ -234,6 +234,12 @@ img.padding-right-5 {
   min-height: 180px;
   margin-bottom: 0px;
 }
+.directorist-listing-details__text {
+  padding-bottom: 20px;
+}
+.directorist-rating-meta i.directorist-icon-mask:after {
+  background-color: #FF9900;
+}
 
 /* Weglot */
 .country-selector.weglot-default {
