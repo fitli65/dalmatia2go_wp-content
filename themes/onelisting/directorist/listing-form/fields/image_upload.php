@@ -53,25 +53,28 @@ $img_upload_data = json_encode( $img_upload_data );
 		</div>
 
 		<div class="ezmu-dictionary">
-			<span class="ezmu-dictionary-label-drop-here"><?php esc_html_e( 'Drop Here', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-label-featured"><?php esc_html_e( 'Preview', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-label-drag-n-drop"><?php esc_html_e( 'Drag & Drop', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-label-or"><?php esc_html_e( 'or', 'directorist' ); ?></span>
+			<span class="ezmu-dictionary-label-drop-here"><?php esc_html_e( 'Drop Here', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-label-featured"><?php esc_html_e( 'Preview', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-label-drag-n-drop"><?php esc_html_e( 'Drag & Drop', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-label-or"><?php esc_html_e( 'or', 'onelisting' ); ?></span>
 			<span class="ezmu-dictionary-label-select-files"><?php echo esc_html( $data['select_files_label'] ); ?></span>
-			<span class="ezmu-dictionary-label-add-more"><?php esc_html_e( 'Add More', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-alert-max-file-size"><?php esc_html_e( 'Maximum limit for a file is  __DT__', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-alert-max-total-file-size"><?php esc_html_e( 'Maximum limit for total file size is __DT__', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-alert-min-file-items"><?php esc_html_e( 'Minimum __DT__ file is required', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-alert-max-file-items"><?php esc_html_e( 'Maximum limit for total file is __DT__', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-info-max-file-size"><?php esc_html_e( 'Maximum allowed size per file is __DT__', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-info-max-total-file-size"><?php esc_html_e( 'Maximum total allowed file size is __DT__', 'directorist' ); ?></span>
-			<span class="ezmu-dictionary-info-type">Minimal picture size: 750x500px</span>
-			<span class="ezmu-dictionary-info-min-file-items"><?php esc_html_e( 'Minimum __DT__ file is required', 'directorist' ); ?></span>
+			<span class="ezmu-dictionary-label-add-more"><?php esc_html_e( 'Add More', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-alert-max-file-size"><?php esc_html_e( 'Maximum limit for a file is  __DT__', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-alert-max-total-file-size"><?php esc_html_e( 'Maximum limit for total file size is __DT__', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-alert-min-file-items"><?php esc_html_e( 'Minimum __DT__ file is required', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-alert-max-file-items"><?php esc_html_e( 'Maximum limit for total file is __DT__', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-info-max-file-size"><?php esc_html_e( 'Maximum allowed size per file is __DT__', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-info-max-total-file-size"><?php esc_html_e( 'Maximum total allowed file size is __DT__', 'onelisting' ); ?></span>
+			<span class="ezmu-dictionary-info-type"></span>
+			<span class="ezmu-dictionary-info-min-file-items"><?php esc_html_e( 'Minimum __DT__ file is required', 'onelisting' ); ?></span>
 			<span class="ezmu-dictionary-info-max-file-items">
-				<?php echo !empty($unlimited) ? esc_html__( 'Unlimited images with this plan!', 'directorist' ) : ( ( $limit > 1 ) ? esc_html__('Maximum __DT__ files are allowed', 'directorist') : esc_html__( 'Maximum __DT__ file is allowed', 'directorist' ) ); ?>
+				<?php echo !empty($unlimited) ? esc_html__( 'Unlimited images with this plan!', 'onelisting' ) : ( ( $limit > 1 ) ? esc_html__('Maximum __DT__ files are allowed', 'onelisting') : esc_html__( 'Maximum __DT__ file is allowed', 'onelisting' ) ); ?>
 			</span>
 		</div>
 
+	</div>
+	<div class="hint">
+		<p><?php esc_html_e( 'Recommended image size: 480x350', 'onelisting' )?></p>
 	</div>
 
 </div>

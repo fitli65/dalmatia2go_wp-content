@@ -234,6 +234,9 @@ img.padding-right-5 {
   min-height: 180px;
   margin-bottom: 0px;
 }
+.directorist-single-listing-header {
+  border: none;
+}
 .directorist-listing-details__text {
   padding-bottom: 20px;
 }
