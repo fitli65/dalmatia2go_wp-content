@@ -40,5 +40,4 @@ function js_dequeue_eicons() {
 }
 add_action( 'elementor/frontend/after_enqueue_styles', 'js_dequeue_eicons', 20 );
 
-
 ?>

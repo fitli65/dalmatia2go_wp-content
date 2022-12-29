@@ -1,6 +1,6 @@
 <?php
 /**
- * Extend Rank Math SEO Plugin with Homey & Directorist variables.
+ * Functions to Extend Rank Math SEO Plugin with Homey & Directorist variables.
  */
 
  add_action( 'rank_math/vars/register_extra_replacements', function() {
@@ -380,5 +380,56 @@
 	$review_count = directorist_get_listing_review_count( $listing );
 		return $review_count;
  }
+
+
+ /**
+ * Function to automatically update the focus keyword with the post title, if no focus keyword is set
+ */
+function update_focus_keywords() {
+    // for pages
+    $pages = get_posts(array(
+    'posts_per_page'	=> -1,
+    'post_type'		=> 'page' // Replace post with the name of your post type
+    ));
+    foreach($pages as $p){
+        // Checks if Rank Math keyword already exists and only updates if it doesn't have it
+        $rank_math_keyword = get_post_meta( $p->ID, 'rank_math_focus_keyword', true );
+	if ( ! $rank_math_keyword ){ 
+            update_post_meta($p->ID,'rank_math_focus_keyword',strtolower(get_the_title($p->ID)));
+        }
+    }
+
+    // for posts
+    $posts = get_posts(array(
+        'posts_per_page'	=> -1,
+        'post_type'		=> 'post' // Replace post with the name of your post type
+        ));
+        foreach($posts as $p){
+            // Checks if Rank Math keyword already exists and only updates if it doesn't have it
+            $rank_math_keyword = get_post_meta( $p->ID, 'rank_math_focus_keyword', true );
+        if ( ! $rank_math_keyword ){ 
+                update_post_meta($p->ID,'rank_math_focus_keyword',strtolower(get_the_title($p->ID)));
+            }
+        }
+
+    // for listings
+    $listings = get_posts(array(
+        'posts_per_page'	=> -1,
+        'post_type'		=> 'listing' // Replace post with the name of your post type
+        ));
+        foreach ($listings as $p) {
+			update_post_meta($p->ID, 'rank_math_focus_keyword', strtolower(get_the_title($p->ID)));
+		}
+
+    // for directorist listings
+    $services = get_posts(array(
+        'posts_per_page' => 100,
+        'post_type' => 'at_biz_dir' //replace post with the name of your post type
+    ));
+    foreach ($services as $p) {
+        update_post_meta($p->ID, 'rank_math_focus_keyword', strtolower(get_the_title($p->ID)));
+    }
+}
+add_action( 'init', 'update_focus_keywords' );
 
  
