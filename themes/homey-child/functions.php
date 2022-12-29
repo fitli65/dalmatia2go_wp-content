@@ -9,9 +9,11 @@ add_action('wp_enqueue_scripts', 'homey_enqueue_styles', PHP_INT_MAX);
 
 // Enque custom scripts
 function ml_main_scripts() {
+    wp_dequeue_script( 'homey-custom' );
+    wp_enqueue_script('ml-custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
     wp_enqueue_script( 'ml-main', get_stylesheet_directory_uri() .'/js/ml-main.js', array( 'jquery' ), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'ml_main_scripts' );
+add_action( 'wp_enqueue_scripts', 'ml_main_scripts', 100 );
 
 // Remove Block Editor from Widgets
 function homey_theme_support() {

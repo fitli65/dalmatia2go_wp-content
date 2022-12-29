@@ -309,6 +309,10 @@ img.padding-right-5 {
   .directorist-details-info-wrap .directorist-single-info .directorist-single-info__label {
     min-width: 100px;
   }
+  .directorist-card .listing-slider-variable-width img {
+    height: 370px !important;
+    width: auto;
+  }
   .footer .container {
     padding-left: 25px;
   }

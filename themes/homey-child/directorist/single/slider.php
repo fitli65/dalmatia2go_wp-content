@@ -48,11 +48,11 @@ if(! empty( $image_links )) {
 	<?php foreach ( $image_links as $image ) { ?>
 		<div>
 		<a href="<?php echo esc_attr( isset( $image['id'] ) ? atbdp_get_image_source( $image['id'], 'full' ) : $image['src'] ) ?>" class="swipebox">
-			<img data-fancy-image-index="<?php echo $i; ?>" class="img-responsive" data-lazy="<?php echo esc_attr( $image['src'] ) ?>" src="<?php echo esc_attr( $image['src'] ) ?>" alt="<?php echo esc_attr( $image['alt'] ) ?>"/>
+			<img data-fancy-image-index="<?php echo $i; ?>" class="img-responsive fanboxTopGalleryVar-item" data-lazy="<?php echo esc_attr( $image['src'] ) ?>" src="<?php echo esc_attr( $image['src'] ) ?>" alt="<?php echo esc_attr( $image['alt'] ) ?>"/>
 		</a>
 		</div>
 	<?php $i++; } ?>
 	</div>
 </div>
-<?php fancybox_gallery_html($image_links, "fanboxTopGalleryVar");//hidden images for gallery fancybox 3 ?>
+<?php fancybox_gallery_html($image['id'], 'full', "fanboxTopGalleryVar");//hidden images for gallery fancybox 3 ?>
 <?php } ?>
