@@ -243,6 +243,13 @@ img.padding-right-5 {
 .directorist-rating-meta i.directorist-icon-mask:after {
   background-color: #FF9900;
 }
+.directorist-type-nav {
+  display: none;
+  visibility: hidden;
+}
+.directorist-payment-gateways ul li {
+  padding: 20px;
+}
 
 /* Weglot */
 .country-selector.weglot-default {
