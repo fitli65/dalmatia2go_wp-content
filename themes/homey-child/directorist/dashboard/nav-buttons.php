@@ -8,8 +8,6 @@
  use \Directorist\Helper;
  $user = wp_get_current_user();
 
- //$listing_type = esc_html( $dashboard->get_listing_type() );
-
 if ( ! defined( 'ABSPATH' ) ) exit;
 ?>
 
