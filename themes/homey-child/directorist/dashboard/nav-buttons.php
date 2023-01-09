@@ -5,13 +5,24 @@
  * @version 7.3.1
  */
 
+ use \Directorist\Helper;
+ $user = wp_get_current_user();
+
+ //$listing_type = esc_html( $dashboard->get_listing_type() );
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 ?>
 
 <div class="directorist-tab__nav__action">
 
 	<?php if ( $dashboard->user_can_submit() ): ?>
-		<a href="/directory-add-listing/?directory_type=general" class="directorist-btn directorist-btn-dark directorist-btn--add-listing"><?php esc_html_e( 'Submit Listing', 'directorist' ); ?></a>
+        <?php if ( Helper::multi_directory_enabled() ): ?>
+            <?php if (in_array( 'subscriber_yachting', (array) $user->roles)) { ?>
+                <a href="/directory-add-listing/?directory_type=yachting" class="directorist-btn directorist-btn-dark directorist-btn--add-listing"><?php esc_html_e( 'Submit Yacht', 'directorist' ); ?></a>
+                <?php } else { ?>
+                    <a href="/directory-add-listing/?directory_type=general" class="directorist-btn directorist-btn-dark directorist-btn--add-listing"><?php esc_html_e( 'Submit Listing', 'directorist' ); ?></a>
+                <?php } ?>
+            <?php endif; ?>
 	<?php endif; ?>
 
 	<?php if ( $dashboard->user_type == 'general' && ! empty( $dashboard->become_author_button)): ?>
@@ -29,7 +40,5 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             </div>
         </div>
 	<?php endif; ?>
-
-	<a href="<?php echo esc_url(wp_logout_url(home_url())); ?>" class="directorist-btn directorist-btn-secondary directorist-btn--logout"><?php esc_html_e( 'Log Out', 'directorist' ); ?></a>
 
 </div>

@@ -47,8 +47,8 @@ $reservation_payment = homey_option('reservation_payment');
     <div class="account-dropdown">
         <ul>
             <?php
-            // MAGICLINE changes start - Contributor Menu
-            if ( in_array( 'subscriber', (array) $current_user->roles ) ) {
+            // MAGICLINE changes start - Directorist Menu
+            if ( in_array( 'subscriber_services', (array) $current_user->roles ) || in_array( 'subscriber_yachting', (array) $current_user->roles ) ) {
                 echo '<li><a href="/directory-dashboard/"><i class="fa fa-home"></i>'.$homey_local['m_dashboard_label'].'</a></li>';
                 echo '<li><a href="' . wp_logout_url(home_url('/')) . '"><i class="fa fa-sign-out"></i>'.$homey_local['m_logout_label'].' </a></li>';
             }

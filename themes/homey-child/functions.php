@@ -40,4 +40,26 @@ function js_dequeue_eicons() {
 }
 add_action( 'elementor/frontend/after_enqueue_styles', 'js_dequeue_eicons', 20 );
 
+/* Create Directorist User Roles */
+function ml_directorist_roles() {
+    add_role( 'subscriber_services', 'Provider Services', get_role( 'contributor' )->capabilities );
+    add_role( 'subscriber_yachting', 'Provider Yachting', get_role( 'contributor' )->capabilities );
+}
+add_action('init', 'ml_directorist_roles');
+
+// Add Upload permission to Directorist roles
+function ml_directorist_uploads() {
+    $roles = (array) wp_get_current_user()->roles;
+    // Services
+    if ( in_array( 'subscriber_services', $roles ) ){
+        $services = get_role( 'subscriber_services' );
+        $services->add_cap( 'upload_files' );
+    }
+    // Yachting
+    if ( in_array( 'subscriber_yachting', $roles ) ){
+        $yachting = get_role( 'subscriber_yachting' );
+        $yachting->add_cap( 'upload_files' );
+    }
+}
+add_action('init', 'ml_directorist_uploads');
 ?>

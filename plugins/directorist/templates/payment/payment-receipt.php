@@ -174,7 +174,7 @@ use \Directorist\Helper;
                 </div>
                 <?php
                 $url = apply_filters('atbdp_payment_receipt_button_link', ATBDP_Permalink::get_dashboard_page_link(), $order_id);
-                $text = apply_filters('atbdp_payment_receipt_button_text', __( 'View your listings', 'directorist' ), $order_id);
+                $text = apply_filters('atbdp_payment_receipt_button_text', __( 'View your dashboard', 'directorist' ), $order_id);
                 ?>
                 <div class="directorist-text-center directorist-mt-30"><a href="<?php echo esc_url($url); ?>" class="directorist-btn directorist-btn-primary"><?php  echo esc_attr($text); ?></a></div>
             </div>
