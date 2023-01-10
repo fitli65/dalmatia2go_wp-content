@@ -22,13 +22,15 @@ function homey_theme_support() {
 add_action( 'after_setup_theme', 'homey_theme_support' );
 
 // Remove double google api from directorist plugin
-function remove_google_api_frontend( $url, $handle ) {
-    if ( ! is_admin() ) {
-        if ( 'google-map-api' === $handle ) {$url = '';}
-        return $url;
-    }
+if ( !is_admin() ) {
+    function remove_google_api_frontend( $url, $handle ) {
+            if ( 'google-map-api' === $handle ) {
+                $url = '';
+            }
+            return $url;
+        }
+    add_filter( 'script_loader_tag', 'remove_google_api_frontend', 10, 3 );
 }
-add_filter( 'script_loader_tag', 'remove_google_api_frontend', 10, 3 );
 
 // Deactivate Eicons at Elementor
 function js_dequeue_eicons() {
