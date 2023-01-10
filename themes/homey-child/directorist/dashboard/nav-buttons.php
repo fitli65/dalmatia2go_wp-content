@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             <?php if (in_array( 'subscriber_yachting', (array) $user->roles)) { ?>
                 <a href="/directory-add-listing/?directory_type=yachting" class="directorist-btn directorist-btn-dark directorist-btn--add-listing"><?php esc_html_e( 'Submit Yacht', 'directorist' ); ?></a>
                 <?php } else { ?>
-                    <a href="/directory-add-listing/?directory_type=general" class="directorist-btn directorist-btn-dark directorist-btn--add-listing"><?php esc_html_e( 'Submit Listing', 'directorist' ); ?></a>
+                    <a href="/directory-add-listing/?directory_type=service" class="directorist-btn directorist-btn-dark directorist-btn--add-listing"><?php esc_html_e( 'Submit Listing', 'directorist' ); ?></a>
                 <?php } ?>
             <?php endif; ?>
 	<?php endif; ?>
