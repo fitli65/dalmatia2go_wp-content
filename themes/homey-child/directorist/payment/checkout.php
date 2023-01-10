@@ -172,7 +172,7 @@ use \Directorist\Helper;
                     'ID' => $current_user,
                     'role' => $yachting
                 ) );
-            } elseif ($listing_type == 'general') {
+            } elseif ($listing_type == 'service') {
                 wp_update_user( array(
                     'ID' => $current_user,
                     'role' => $services
